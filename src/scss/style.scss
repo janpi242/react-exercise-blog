@@ -1,0 +1,55 @@
+@import './vars';
+@import './colors';
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+
+    @media all and (min-width:768px) {
+        width: 75%;
+    }
+}
+
+#app {
+
+    font-family: sans-serif;
+
+    .article-snippet {
+        padding: $spacer;
+
+        &:hover {
+            box-shadow: 0px 0px 10px $primary-shadow;
+        }
+    }
+
+    .comment {
+        padding: $spacer;
+        border-radius: $spacer;
+        background-color: $primary-light-blue;
+
+        &:not(:last-child) {
+            margin-bottom: $spacer;
+        }
+
+        &__email {
+            color: $primary-red;
+        }
+
+        &--accented {
+            background-color: $primary-blue;
+        }
+    }
+
+    .pagination {        
+        list-style: none;
+        padding: $spacer;
+        &__item {
+            display: inline;
+            &__button {
+                &--active {
+                    background-color: $primary-blue;
+                }
+            }
+        }
+    }
+}
