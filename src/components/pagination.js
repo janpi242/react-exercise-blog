@@ -11,23 +11,23 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
     }
 
     const handlePrev = () => {
-        handler(currentPage-1 >= 1 ? currentPage-1 : 1)
+        handler(currentPage - 1 >= 1 ? currentPage - 1 : 1)
     }
 
     const handleNext = () => {
-        handler(currentPage+1 <= pageCount ? currentPage+1 : pageCount)        
+        handler(currentPage + 1 <= pageCount ? currentPage + 1 : pageCount)
     }
 
     const handleSelectPage = (i) => {
         handler(i)
     }
-    
+
     let pagination = '';
     if (pageCount) {
 
         const pages = [];
         for (let i = 1; i <= pageCount; i++) {
-            pages.push(<li className="pagination__item" key={i}><button className={i == currentPage ? 'pagination__item__button--active' : ''} onClick={() => { handleSelectPage(i)}}>{i}</button></li>)
+            pages.push(<li className="pagination__item" key={i}><button className={i == currentPage ? 'pagination__item__button--active' : ''} onClick={() => { handleSelectPage(i) }}>{i}</button></li>)
         }
 
         pagination = <ul className="pagination">
@@ -39,11 +39,8 @@ const Pagination = ({ pageCount, currentPage, handler }) => {
         </ul>
     }
 
-    return (
-        <div className="pagination">
-            {pagination}
-        </div>
-    )
+    return pagination
+
 }
 
 export default Pagination
